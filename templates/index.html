@@ -1,0 +1,1941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RecoverAI – AI-Powered Payment Revenue Recovery Agent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Left Navigation Sidebar: EXACTLY 8 ITEMS -->
+    <aside class="app-sidebar" id="appSidebar">
+      <div class="sidebar-top">
+        <div class="sidebar-brand">
+          <div class="brand-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              <path d="m20 12-4-4 4-4"/>
+            </svg>
+          </div>
+          <div class="brand-info">
+            <div class="brand-title">RecoverAI</div>
+            <span class="brand-tag">RAZORPAY 2026 TRACK 3</span>
+            <span class="brand-subtitle">AI-Powered Payment Recovery Agent</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <!-- 1. Dashboard -->
+          <button class="nav-item active" data-section="dashboard" data-route="/">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="7"/>
+              <rect x="14" y="3" width="7" height="7"/>
+              <rect x="14" y="14" width="7" height="7"/>
+              <rect x="3" y="14" width="7" height="7"/>
+            </svg>
+            <span>Dashboard</span>
+          </button>
+
+          <!-- 2. Recovery Center -->
+          <button class="nav-item" data-section="recovery" data-route="/recovery">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <line x1="2" y1="10" x2="22" y2="10"/>
+              <path d="M6 15h2"/>
+              <circle cx="16" cy="15" r="2"/>
+            </svg>
+            <span>Recovery Center</span>
+            <span class="nav-badge" id="queueBadge">60</span>
+          </button>
+
+          <!-- 3. AI Analyzer -->
+          <button class="nav-item" data-section="analyzer" data-route="/analyzer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="4" y="4" width="16" height="16" rx="2"/>
+              <rect x="9" y="9" width="6" height="6"/>
+              <line x1="9" y1="1" x2="9" y2="4"/>
+              <line x1="15" y1="1" x2="15" y2="4"/>
+              <line x1="9" y1="20" x2="9" y2="23"/>
+              <line x1="15" y1="20" x2="15" y2="23"/>
+              <line x1="20" y1="9" x2="23" y2="9"/>
+              <line x1="20" y1="14" x2="23" y2="14"/>
+              <line x1="1" y1="9" x2="4" y2="9"/>
+              <line x1="1" y1="14" x2="4" y2="14"/>
+            </svg>
+            <span>AI Analyzer</span>
+          </button>
+
+          <!-- 4. Analytics -->
+          <button class="nav-item" data-section="analytics" data-route="/analytics">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="20" x2="18" y2="10"/>
+              <line x1="12" y1="20" x2="12" y2="4"/>
+              <line x1="6" y1="20" x2="6" y2="14"/>
+            </svg>
+            <span>Analytics</span>
+          </button>
+
+          <!-- 5. Strategy Lab -->
+          <button class="nav-item" data-section="strategy" data-route="/strategy">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="12" r="6"/>
+              <circle cx="12" cy="12" r="2"/>
+            </svg>
+            <span>Strategy Lab</span>
+          </button>
+
+          <!-- 6. Simulation Lab -->
+          <button class="nav-item" data-section="simulation" data-route="/simulation">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="5 3 19 12 5 21 5 3"/>
+            </svg>
+            <span>Simulation Lab</span>
+          </button>
+
+          <!-- 7. AI Decisions & Audit -->
+          <button class="nav-item" data-section="audit" data-route="/audit">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <polyline points="9 12 11 14 15 10"/>
+            </svg>
+            <span>AI Decisions & Audit</span>
+          </button>
+
+          <!-- 8. Admin & Policies -->
+          <button class="nav-item" data-section="admin" data-route="/admin">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+            </svg>
+            <span>Admin & Policies</span>
+          </button>
+        </nav>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="system-status-box">
+          <div class="status-indicator">
+            <span class="status-dot online"></span>
+            <span class="status-text">Agent Online</span>
+          </div>
+          <small class="text-muted" id="sidebarGuardrailCount">6 Guardrails Active</small>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="app-main-wrapper">
+      <!-- Top Global Header -->
+      <header class="app-topbar">
+        <div class="topbar-left">
+          <button class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Toggle Navigation">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          </button>
+          <div class="topbar-title-wrap">
+            <div class="topbar-brand-row">
+              <h2 id="currentSectionTitle">Dashboard</h2>
+              <span class="topbar-status-badge">
+                <span class="pulse-dot"></span> SANDBOX SIMULATOR
+              </span>
+              <span class="backend-status-badge">
+                <span class="backend-dot"></span> Backend: FastAPI :8000
+              </span>
+            </div>
+            <p class="topbar-sub">RecoverAI – AI-Powered Payment Revenue Recovery Agent</p>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <button class="btn btn-primary btn-sm" id="topbarBatchBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="5 3 19 12 5 21 5 3"/>
+            </svg>
+            <span>Run Batch Simulation</span>
+          </button>
+
+          <button class="btn btn-secondary btn-sm" id="openAuditTrailBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+            <span>Audit Trail (<span id="auditCount">0</span>)</span>
+          </button>
+
+          <button class="btn btn-secondary btn-sm" id="resetDemoBtn" title="Reset dataset and policies to clean demo state">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+              <path d="M3 3v5h5"/>
+            </svg>
+            <span>Reset Demo</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- View Containers (Section Switching) -->
+      <main class="content-body">
+        <!-- ===================================================================
+             1. DASHBOARD (/ -> #view-dashboard)
+             =================================================================== -->
+        <div class="section-view active" id="view-dashboard" data-alias="command-center">
+          <!-- Top KPI Cards -->
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <div class="metric-header">
+                <span class="metric-title">Total Transactions</span>
+                <div class="metric-icon bg-blue-subtle">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="5" width="20" height="14" rx="2"/>
+                    <line x1="2" y1="10" x2="22" y2="10"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="metric-value" id="kpiTotalTx">60</div>
+              <div class="metric-footer text-muted">Synthetic Indian payment transactions</div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-header">
+                <span class="metric-title">Revenue at Risk</span>
+                <div class="metric-icon bg-red-subtle">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="metric-value text-danger" id="kpiRevenueRisk">₹0</div>
+              <div class="metric-footer text-muted">Failed payment volume awaiting recovery</div>
+            </div>
+
+            <div class="metric-card highlight-card">
+              <div class="metric-header">
+                <span class="metric-title">Potentially Recoverable</span>
+                <div class="metric-icon bg-green-subtle">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="metric-value text-emerald" id="kpiRecoverable">₹0</div>
+              <div class="metric-footer text-emerald-dark">AI estimated likelihood ≥ 75%</div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-header">
+                <span class="metric-title">Recovered Revenue</span>
+                <div class="metric-icon bg-indigo-subtle">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="metric-value text-primary" id="kpiRecovered">₹0</div>
+              <div class="metric-footer text-muted">Recovery Rate: <strong id="kpiRecoveryRate">0.0%</strong></div>
+            </div>
+          </div>
+
+          <!-- Revenue Recovery Overview & AI Activity Row -->
+          <div class="dashboard-row">
+            <!-- Central Visual: Revenue Recovery Overview -->
+            <div class="card card-flex-2">
+              <div class="card-header">
+                <div class="card-header-title">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="20" x2="12" y2="10"/>
+                    <line x1="18" y1="20" x2="18" y2="4"/>
+                    <line x1="6" y1="20" x2="6" y2="16"/>
+                  </svg>
+                  <h3>Revenue Recovery Overview</h3>
+                </div>
+                <span class="badge-tag">Synthetic Demo Simulation</span>
+              </div>
+              <div class="card-body">
+                <div class="revenue-bars-container">
+                  <div class="rev-bar-group">
+                    <div class="rev-bar-label">
+                      <span>Revenue at Risk</span>
+                      <strong class="text-danger" id="barValRisk">₹0</strong>
+                    </div>
+                    <div class="rev-bar-track">
+                      <div class="rev-bar-fill fill-rose" id="barFillRisk" style="width: 100%;"></div>
+                    </div>
+                  </div>
+
+                  <div class="rev-bar-group">
+                    <div class="rev-bar-label">
+                      <span>Expected Recovery Value (Amount × Probability)</span>
+                      <strong class="text-amber" id="barValExpected">₹0</strong>
+                    </div>
+                    <div class="rev-bar-track">
+                      <div class="rev-bar-fill fill-amber" id="barFillExpected" style="width: 45%;"></div>
+                    </div>
+                  </div>
+
+                  <div class="rev-bar-group">
+                    <div class="rev-bar-label">
+                      <span>Recovered Revenue (Captured & Settled)</span>
+                      <strong class="text-emerald" id="barValRecovered">₹0</strong>
+                    </div>
+                    <div class="rev-bar-track">
+                      <div class="rev-bar-fill fill-emerald" id="barFillRecovered" style="width: 0%;"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Baseline vs RecoverAI Incremental Impact -->
+                <div class="baseline-comparison-box">
+                  <div class="comparison-header">
+                    <h4>Baseline Recovery vs RecoverAI Strategy Engine</h4>
+                    <span class="comparison-badge" id="liftBadge">+0% Lift</span>
+                  </div>
+                  <div class="comparison-grid">
+                    <div class="comparison-item">
+                      <span class="comp-label">Baseline (Blind Retries)</span>
+                      <strong class="comp-val" id="compBaseline">₹0</strong>
+                    </div>
+                    <div class="comparison-item">
+                      <span class="comp-label">RecoverAI (Strategic Retries)</span>
+                      <strong class="comp-val text-primary" id="compRecoverAI">₹0</strong>
+                    </div>
+                    <div class="comparison-item">
+                      <span class="comp-label">Incremental Revenue</span>
+                      <strong class="comp-val text-emerald" id="compIncremental">₹0</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- AI Recovery Activity Status -->
+            <div class="card card-flex-1">
+              <div class="card-header">
+                <div class="card-header-title">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 14 14"/>
+                  </svg>
+                  <h3>AI Recovery Activity</h3>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="activity-list">
+                  <div class="activity-item">
+                    <div class="activity-icon bg-green-subtle">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                        <polyline points="20 6 9 17 4 12"/>
+                      </svg>
+                    </div>
+                    <div class="activity-details">
+                      <span class="act-label">Successful Recoveries</span>
+                      <strong class="act-count text-emerald" id="actRecovered">0</strong>
+                    </div>
+                  </div>
+
+                  <div class="activity-item">
+                    <div class="activity-icon bg-amber-subtle">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                      </svg>
+                    </div>
+                    <div class="activity-details">
+                      <span class="act-label">Agent Interventions Required</span>
+                      <strong class="act-count text-amber" id="actInterventions">0</strong>
+                    </div>
+                  </div>
+
+                  <div class="activity-item">
+                    <div class="activity-icon bg-red-subtle">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <line x1="9" y1="9" x2="15" y2="15"/>
+                        <line x1="15" y1="9" x2="9" y2="15"/>
+                      </svg>
+                    </div>
+                    <div class="activity-details">
+                      <span class="act-label">Blocked Recoveries (Guard Active)</span>
+                      <strong class="act-count text-danger" id="actBlocked">0</strong>
+                    </div>
+                  </div>
+
+                  <div class="activity-item">
+                    <div class="activity-icon bg-blue-subtle">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                      </svg>
+                    </div>
+                    <div class="activity-details">
+                      <span class="act-label">Pending Recovery Retries</span>
+                      <strong class="act-count text-primary" id="actPending">0</strong>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="activity-cta-box">
+                  <button class="btn btn-outline btn-block" id="btnRunBatchSimulation">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polygon points="5 3 19 12 5 21 5 3"/>
+                    </svg>
+                    <span>Simulate All Recoverable</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Important Alerts & Active Sentinel Strip -->
+          <div class="sentinel-alert-card">
+            <div class="sentinel-badge">
+              <span class="pulse-dot"></span>
+              <strong>SYSTEM SENTINEL ACTIVE</strong>
+            </div>
+            <div class="sentinel-alerts-list">
+              <span class="sentinel-item"><strong>6/6 Guardrails Active:</strong> Retry limits (2 max), financial overdraft & idempotency locks enforced</span>
+              <span class="sentinel-item"><strong>Auto-Recovery Filter:</strong> High probability threshold set to ≥75% likelihood</span>
+              <span class="sentinel-item"><strong>Audit Engine:</strong> 100% decision explainability tracked in real-time</span>
+            </div>
+          </div>
+
+          <!-- Executive Charts Grid on Dashboard -->
+          <div class="dashboard-charts-grid">
+            <!-- 1. Revenue Trend Chart -->
+            <div class="card">
+              <div class="card-header">
+                <div class="card-header-title">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="20" x2="18" y2="10"/>
+                    <line x1="12" y1="20" x2="12" y2="4"/>
+                    <line x1="6" y1="20" x2="6" y2="14"/>
+                  </svg>
+                  <h4>Revenue at Risk vs Recovered Trend</h4>
+                </div>
+                <div class="chart-legend-pills mini-legend">
+                  <span class="legend-pill"><span class="legend-dot" style="background:#ef4444;"></span> Risk</span>
+                  <span class="legend-pill"><span class="legend-dot" style="background:#10b981;"></span> Recovered</span>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="trend-chart-container" id="dashChartTrendContainer">
+                  <!-- Rendered dynamically -->
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Failure Distribution -->
+            <div class="card">
+              <div class="card-header">
+                <div class="card-header-title">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <circle cx="12" cy="12" r="4"/>
+                  </svg>
+                  <h4>Failure Reason Distribution</h4>
+                </div>
+                <span class="badge-tag">Root Causes</span>
+              </div>
+              <div class="card-body">
+                <div class="donut-chart-container" id="dashChartDonutContainer">
+                  <!-- Rendered dynamically -->
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Channel Recovery Rate -->
+            <div class="card">
+              <div class="card-header">
+                <div class="card-header-title">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                  </svg>
+                  <h4>Recovery Rate by Payment Channel</h4>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="channel-chart-container" id="dashChartChannelContainer">
+                  <!-- Rendered dynamically -->
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. Recommended Recovery Actions -->
+            <div class="card">
+              <div class="card-header">
+                <div class="card-header-title">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 11 12 14 22 4"/>
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                  </svg>
+                  <h4>Recommended Recovery Actions</h4>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="actions-chart-container" id="dashChartActionsContainer">
+                  <!-- Rendered dynamically -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Priority Recovery Queue (High-Impact Transactions) -->
+          <div class="card" style="margin-top: 1.5rem;">
+            <div class="card-header">
+              <div class="card-header-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+                <h3>Priority Recovery Queue</h3>
+              </div>
+              <button class="btn btn-secondary btn-sm" id="btnGoToQueue">
+                <span>View Full Recovery Center &rarr;</span>
+              </button>
+            </div>
+            <div class="table-container">
+              <table class="payment-table">
+                <thead>
+                  <tr>
+                    <th>Transaction</th>
+                    <th>Customer</th>
+                    <th>Amount</th>
+                    <th>Failure Reason</th>
+                    <th>Recovery Likelihood</th>
+                    <th>Expected Recovery</th>
+                    <th>Recommended Strategy</th>
+                    <th>Final State</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="priorityQueueBody">
+                  <!-- Rendered dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             2. RECOVERY CENTER (/recovery -> #view-recovery)
+             =================================================================== -->
+        <div class="section-view" id="view-recovery" data-alias="recovery-queue">
+          <!-- Quick Demo Scenarios Bar -->
+          <section class="demo-scenarios-card">
+            <div class="scenarios-header">
+              <div class="scenarios-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                </svg>
+                <strong>HACKATHON QUICK DEMO SCENARIOS:</strong>
+                <span class="text-muted">Click any scenario to verify state consistency, guardrails, and strategies</span>
+              </div>
+            </div>
+            <div class="scenarios-buttons">
+              <button class="scenario-btn" data-txid="TX1001">
+                <span class="scenario-number">1</span>
+                <div class="scenario-desc">
+                  <strong>Bank Timeout (TX1001)</strong>
+                  <span>88% Prob • Strategy: RETRY_NOW</span>
+                </div>
+              </button>
+
+              <button class="scenario-btn" data-txid="TX1002">
+                <span class="scenario-number">2</span>
+                <div class="scenario-desc">
+                  <strong>Insufficient Funds (TX1002)</strong>
+                  <span>Strategy: CONTACT_CUSTOMER</span>
+                </div>
+              </button>
+
+              <button class="scenario-btn" data-txid="TX1003">
+                <span class="scenario-number">3</span>
+                <div class="scenario-desc">
+                  <strong>Expired Card (TX1003)</strong>
+                  <span>Strategy: ALTERNATE_PAYMENT_METHOD</span>
+                </div>
+              </button>
+
+              <button class="scenario-btn scenario-guard" data-txid="TX1004">
+                <span class="scenario-number">4</span>
+                <div class="scenario-desc">
+                  <strong>Retry Limit Reached (TX1004)</strong>
+                  <span>2 Attempts • RECOVERY BLOCKED</span>
+                </div>
+              </button>
+
+              <button class="scenario-btn scenario-success" data-txid="TX1005">
+                <span class="scenario-number">5</span>
+                <div class="scenario-desc">
+                  <strong>UPI Recovery Demo (TX1005)</strong>
+                  <span>Attempts: 1&rarr;2 • State: RECOVERED!</span>
+                </div>
+              </button>
+            </div>
+          </section>
+
+          <!-- Search & Filter Controls -->
+          <div class="table-section">
+            <div class="table-toolbar">
+              <div class="filter-chips" id="filterChips">
+                <button class="chip active" data-filter="all">All Payments (<span id="countAll">0</span>)</button>
+                <button class="chip" data-filter="high">Actionable High (≥75%) (<span id="countHigh">0</span>)</button>
+                <button class="chip" data-filter="medium">Medium (40-74%) (<span id="countMedium">0</span>)</button>
+                <button class="chip" data-filter="low">Low (&lt;40%) (<span id="countLow">0</span>)</button>
+                <button class="chip" data-filter="contact">Needs Intervention (<span id="countContact">0</span>)</button>
+                <button class="chip" data-filter="blocked">Guard Blocked (<span id="countBlocked">0</span>)</button>
+                <button class="chip" data-filter="recovered">Recovered (<span id="countRecovered">0</span>)</button>
+              </div>
+
+              <div class="toolbar-actions">
+                <div class="sort-wrap">
+                  <label for="sortSelect">Sort:</label>
+                  <select id="sortSelect" class="form-select-sm">
+                    <option value="amount-desc">Amount: High &rarr; Low</option>
+                    <option value="prob-desc" selected>Recovery Prob: High &rarr; Low</option>
+                    <option value="expected-desc">Expected Value: High &rarr; Low</option>
+                    <option value="attempts-asc">Attempts: Low &rarr; High</option>
+                    <option value="id-asc">Transaction ID</option>
+                  </select>
+                </div>
+                <div class="search-wrap">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                  </svg>
+                  <input type="text" id="searchInput" placeholder="Search by ID, customer, method, reason...">
+                </div>
+              </div>
+            </div>
+
+            <!-- Full Queue Table -->
+            <div class="table-container">
+              <table class="payment-table">
+                <thead>
+                  <tr>
+                    <th>Transaction ID</th>
+                    <th>Customer</th>
+                    <th>Amount</th>
+                    <th>Payment Method</th>
+                    <th>Failure Reason</th>
+                    <th>Attempts</th>
+                    <th>Recovery Probability</th>
+                    <th>Expected Recovery</th>
+                    <th>Recommended Strategy</th>
+                    <th>Final State</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="paymentTableBody">
+                  <!-- Rendered dynamically -->
+                </tbody>
+              </table>
+            </div>
+            <div class="table-footer">
+              <span id="tableShowingCount">Showing 0 transactions</span>
+              <span class="text-muted">Click any transaction to open the Decision & Recovery Drawer</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             3. AI ANALYZER (/analyzer -> #view-analyzer)
+             =================================================================== -->
+        <div class="section-view" id="view-analyzer">
+          <div class="analyzer-header-bar">
+            <div>
+              <h3>AI Payment Recovery Analyzer</h3>
+              <p class="text-muted">Perform deep-tier telemetry diagnosis, explainable decision validation, and live recovery execution on any failed transaction.</p>
+            </div>
+            <div class="analyzer-tx-selector-wrap">
+              <label for="analyzerSelect">Select Transaction:</label>
+              <select id="analyzerSelect" class="form-control-sm">
+                <!-- Populated dynamically with all transactions -->
+              </select>
+            </div>
+          </div>
+
+          <!-- Quick Scenario Pills in Analyzer -->
+          <div class="analyzer-pills-bar">
+            <span class="pill-label">Demo Shortcuts:</span>
+            <button class="mini-scenario-pill active" onclick="selectAnalyzerTx('TX1005')">TX1005 (UPI Recovery Demo)</button>
+            <button class="mini-scenario-pill" onclick="selectAnalyzerTx('TX1001')">TX1001 (Bank Timeout)</button>
+            <button class="mini-scenario-pill" onclick="selectAnalyzerTx('TX1002')">TX1002 (Insufficient Funds)</button>
+            <button class="mini-scenario-pill" onclick="selectAnalyzerTx('TX1003')">TX1003 (Expired Card)</button>
+            <button class="mini-scenario-pill" onclick="selectAnalyzerTx('TX1004')">TX1004 (Guard Blocked)</button>
+          </div>
+
+          <!-- Analyzer Workspace Grid -->
+          <div class="analyzer-grid">
+            <!-- Left Column: Telemetry & Payment Profile -->
+            <div class="analyzer-left-col">
+              <!-- Payment Telemetry Card -->
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-header-title">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="2" y="5" width="20" height="14" rx="2"/>
+                      <line x1="2" y1="10" x2="22" y2="10"/>
+                    </svg>
+                    <h4>Payment Telemetry & Infrastructure</h4>
+                  </div>
+                  <span class="status-pill" id="anViewStatusPill">Failed</span>
+                </div>
+                <div class="card-body">
+                  <div class="an-meta-hero">
+                    <div class="an-meta-hero-left">
+                      <span class="an-meta-tx" id="anViewTxId">TX1005</span>
+                      <h3 class="an-meta-customer" id="anViewCustomer">Vikram Singh</h3>
+                      <span class="text-muted" id="anViewDate">2026-09-05 10:02:18</span>
+                    </div>
+                    <div class="an-meta-hero-right">
+                      <span class="an-meta-amount-label">Transaction Value</span>
+                      <strong class="an-meta-amount text-primary" id="anViewAmount">₹7,850.00</strong>
+                    </div>
+                  </div>
+
+                  <div class="telemetry-grid">
+                    <div class="telemetry-box">
+                      <span class="tel-label">Failure Reason</span>
+                      <strong class="tel-val text-danger" id="anViewFailure">UPI Timeout</strong>
+                    </div>
+                    <div class="telemetry-box">
+                      <span class="tel-label">Payment Method</span>
+                      <strong class="tel-val" id="anViewMethod">UPI</strong>
+                    </div>
+                    <div class="telemetry-box">
+                      <span class="tel-label">Retry Attempts</span>
+                      <strong class="tel-val" id="anViewAttempts">1 of 2 Used</strong>
+                    </div>
+                    <div class="telemetry-box">
+                      <span class="tel-label">Customer Success Rate</span>
+                      <strong class="tel-val text-emerald" id="anViewCustRate">94.8%</strong>
+                    </div>
+                    <div class="telemetry-box">
+                      <span class="tel-label">Previous Dropouts</span>
+                      <strong class="tel-val" id="anViewPrevFail">0 Historical</strong>
+                    </div>
+                    <div class="telemetry-box">
+                      <span class="tel-label">Gateway Latency</span>
+                      <strong class="tel-val text-amber" id="anViewLatency">840 ms (Timeout)</strong>
+                    </div>
+                    <div class="telemetry-box">
+                      <span class="tel-label">Merchant Category</span>
+                      <strong class="tel-val" id="anViewMcc">E-Commerce Retailing</strong>
+                    </div>
+                    <div class="telemetry-box">
+                      <span class="tel-label">Device Client</span>
+                      <strong class="tel-val" id="anViewDevice">Mobile Android 14</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Customer Communication Dispatch Card -->
+              <div class="card" style="margin-top: 1.5rem;">
+                <div class="card-header">
+                  <div class="card-header-title">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                    <h4>Personalized Customer Recovery Dispatch</h4>
+                  </div>
+                  <button class="btn btn-xs btn-outline" id="anViewCopyBtn">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                    </svg>
+                    <span>Copy Dispatch</span>
+                  </button>
+                </div>
+                <div class="card-body">
+                  <div class="message-bubble" id="anViewMessageBubble">
+                    Hi Vikram, your payment of ₹7,850 for order TX1005 was interrupted due to a temporary UPI connection drop. Please click here to complete your payment: https://pay.rzp.io/r/TX1005
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: AI Decision, Guardrail, Execution & History -->
+            <div class="analyzer-right-col">
+              <!-- AI Decision & Intelligence Card -->
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-header-title">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                      <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                    </svg>
+                    <h4>AI Decision & Explainability</h4>
+                  </div>
+                  <span class="engine-tag" id="anViewEngineTag">Gemini 2.5 Flash + Guard Engine</span>
+                </div>
+                <div class="card-body">
+                  <div class="an-decision-stats">
+                    <div class="an-prob-card">
+                      <span class="text-muted" style="font-size:0.75rem;">AI Recovery Likelihood</span>
+                      <div class="an-prob-big" id="anViewProb">91%</div>
+                      <div class="prob-bar-wrap" style="height:8px; margin-top:0.4rem;">
+                        <div class="prob-bar-fill fill-emerald" id="anViewProbBar" style="width: 91%;"></div>
+                      </div>
+                    </div>
+
+                    <div class="an-strat-card">
+                      <span class="text-muted" style="font-size:0.75rem;">Recommended Recovery Strategy</span>
+                      <div style="margin-top:0.35rem;">
+                        <span class="action-badge" id="anViewActionBadge">WAIT_AND_RETRY</span>
+                      </div>
+                      <div style="margin-top:0.4rem;">
+                        <span class="risk-badge" id="anViewRiskBadge">Low Risk</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Guardrail Status Card -->
+                  <div class="guard-card" id="anViewGuardCard" style="margin-top: 1rem;">
+                    <div class="guard-header">
+                      <div class="guard-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                      </div>
+                      <div class="guard-title-wrap">
+                        <h4>RECOVERY GUARD VALIDATION</h4>
+                        <span class="guard-status-badge" id="anViewGuardBadge">AUTOMATIC RECOVERY ACTIVE</span>
+                      </div>
+                    </div>
+                    <div class="guard-body">
+                      <p class="guard-explanation" id="anViewGuardReason">
+                        Recovery Guard permits controlled retry: 1/2 attempts used. Idempotency verified.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- AI Reasoning -->
+                  <div class="ai-reason-box" style="margin-top: 1rem;">
+                    <span class="reason-title">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="16" x2="12" y2="12"/>
+                        <line x1="12" y1="8" x2="12.01" y2="8"/>
+                      </svg>
+                      Model Diagnostic Reasoning
+                    </span>
+                    <p id="anViewReason">
+                      NPCI UPI switch dropped connection during 2FA response. Historical data shows 84% recovery on delayed 15-minute retry. Customer account has zero fraud signals.
+                    </p>
+                  </div>
+
+                  <!-- Simulated Result Banner -->
+                  <div class="simulation-banner" id="anViewSimBanner" style="display:none; margin-top:1rem;">
+                    <div class="sim-header">
+                      <div class="sim-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                      </div>
+                      <div class="sim-title-group">
+                        <strong id="anViewSimTitle">Recovery Action Simulated</strong>
+                        <span class="text-muted" id="anViewSimTime">Just now</span>
+                      </div>
+                    </div>
+                    <div class="sim-body">
+                      <div class="sim-detail-row">
+                        <span>Final State:</span>
+                        <strong id="anViewSimOutcome">Recovered</strong>
+                      </div>
+                      <div class="sim-detail-row">
+                        <span>Amount Captured:</span>
+                        <strong class="text-emerald" id="anViewSimAmount">₹7,850.00</strong>
+                      </div>
+                      <p class="sim-message" id="anViewSimMessage">Payment successfully recovered and funds were settled in full.</p>
+                    </div>
+                  </div>
+
+                  <!-- Action Buttons Group -->
+                  <div class="action-buttons-group" style="margin-top: 1.25rem;">
+                    <button class="btn btn-primary" id="anViewBtnExecute">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="5 3 19 12 5 21 5 3"/>
+                      </svg>
+                      <span>Execute Recovery Simulation</span>
+                    </button>
+
+                    <button class="btn btn-secondary" id="anViewBtnAnalyze">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                      </svg>
+                      <span>Analyze with AI</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Transaction Audit History Timeline -->
+              <div class="card" style="margin-top: 1.5rem;">
+                <div class="card-header">
+                  <div class="card-header-title">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="10"/>
+                      <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                    <h4>Transaction Decision Timeline</h4>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="history-timeline" id="anViewTimeline">
+                    <!-- Populated dynamically -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             4. ANALYTICS (/analytics -> #view-analytics)
+             =================================================================== -->
+        <div class="section-view" id="view-analytics">
+          <!-- 1. Analytics Header -->
+          <div class="analytics-header-banner">
+            <div>
+              <h3>Synthetic Historical & Live Recovery Analytics</h3>
+              <p class="text-muted">Measure strategy efficacy, channel recovery distributions, and incremental revenue captured.</p>
+            </div>
+            <div class="analytics-header-tags">
+              <span class="badge-tag">Synthetic Dataset Validation</span>
+              <span class="badge-tag" style="background:#e0f2fe; color:#0369a1;">Razorpay AI Builder Track 3</span>
+            </div>
+          </div>
+
+          <!-- 2. Top Analytics KPI row -->
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <span class="metric-title">Revenue at Risk</span>
+              <div class="metric-value text-danger" id="anRisk">₹0</div>
+              <div class="metric-footer text-muted">Currently unresolved failed payment volume</div>
+            </div>
+            <div class="metric-card">
+              <span class="metric-title">Recovered Revenue</span>
+              <div class="metric-value text-emerald" id="anRecovered">₹0</div>
+              <div class="metric-footer text-muted">Actual simulated recovery captured</div>
+            </div>
+            <div class="metric-card">
+              <span class="metric-title">Incremental Revenue</span>
+              <div class="metric-value text-primary" id="anIncremental">₹0</div>
+              <div class="metric-footer text-muted">Lift over blind retry baseline</div>
+            </div>
+            <div class="metric-card">
+              <span class="metric-title">Average Recovery Likelihood</span>
+              <div class="metric-value" id="anAvgProb">0%</div>
+              <div class="metric-footer text-muted">Model confidence across all failures</div>
+            </div>
+          </div>
+
+          <!-- 3. Revenue at Risk vs Recovered Trend (Line/Area Chart) -->
+          <div class="card" style="margin-bottom: 1.5rem;">
+            <div class="card-header" style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.5rem;">
+              <div>
+                <h4 style="margin:0 0 0.25rem 0;">3. Revenue at Risk vs Recovered Trend</h4>
+                <p class="text-muted" style="font-size:0.8rem; margin:0;">Daily trajectory of failed payment value versus recovered revenue (Past 14 Days)</p>
+              </div>
+              <div class="chart-legend-pills">
+                <span class="legend-pill"><span class="legend-dot" style="background:#ef4444;"></span> Revenue at Risk</span>
+                <span class="legend-pill"><span class="legend-dot" style="background:#10b981;"></span> Recovered Revenue</span>
+                <span class="legend-pill"><span class="legend-dot" style="background:#f59e0b;"></span> Incremental Recovery</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="trend-chart-container" id="chartTrendContainer">
+                <!-- Rendered dynamically with SVG Line & Area chart -->
+              </div>
+            </div>
+          </div>
+
+          <!-- 2-Column Grid: Section 4 (Donut) & Section 5 (Channel Bar Chart) -->
+          <div class="analytics-two-col-grid" style="margin-bottom: 1.5rem;">
+            <!-- 4. Failure Reason Distribution -->
+            <div class="card">
+              <div class="card-header">
+                <h4 style="margin:0 0 0.25rem 0;">4. Failure Reason Distribution</h4>
+                <p class="text-muted" style="font-size:0.8rem; margin:0;">Root-cause breakdown of failed checkout attempts</p>
+              </div>
+              <div class="card-body">
+                <div class="donut-chart-container" id="chartDonutContainer">
+                  <!-- Rendered dynamically with SVG Donut Chart and legend -->
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. Recovery Rate by Payment Channel -->
+            <div class="card">
+              <div class="card-header">
+                <h4 style="margin:0 0 0.25rem 0;">5. Recovery Rate by Payment Channel</h4>
+                <p class="text-muted" style="font-size:0.8rem; margin:0;">Channel efficiency and recovery conversion %</p>
+              </div>
+              <div class="card-body">
+                <div class="channel-chart-container" id="chartChannelContainer">
+                  <!-- Rendered dynamically -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2-Column Grid: Section 6 (Recommended Actions) & Section 7 (Strategy Performance) -->
+          <div class="analytics-two-col-grid" style="margin-bottom: 1.5rem;">
+            <!-- 6. Recommended Recovery Actions -->
+            <div class="card">
+              <div class="card-header">
+                <h4 style="margin:0 0 0.25rem 0;">6. Recommended Recovery Actions</h4>
+                <p class="text-muted" style="font-size:0.8rem; margin:0;">AI agent strategic strategy allocations (sorted highest to lowest)</p>
+              </div>
+              <div class="card-body">
+                <div class="actions-chart-container" id="chartActionsContainer">
+                  <!-- Rendered dynamically without nan -->
+                </div>
+              </div>
+            </div>
+
+            <!-- 7. Recovery Strategy Performance -->
+            <div class="card">
+              <div class="card-header" style="display:flex; justify-content:space-between; align-items:flex-start;">
+                <div>
+                  <h4 style="margin:0 0 0.25rem 0;">7. Recovery Strategy Performance</h4>
+                  <p class="text-muted" style="font-size:0.8rem; margin:0;">Synthetic historical outcomes used by the strategy selection engine</p>
+                </div>
+                <span class="badge-tag" style="font-size:0.68rem;">Synthetic Historical Performance</span>
+              </div>
+              <div class="card-body" style="padding:0.75rem 1rem;">
+                <div class="strategy-perf-table-wrap" id="chartStrategyPerfContainer">
+                  <!-- Rendered dynamically -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2-Column Grid: Section 8 (Best Strategy Mapping) & Section 9 (Agent Decision Quality) -->
+          <div class="analytics-two-col-grid" style="margin-bottom: 1.5rem;">
+            <!-- 8. Strategy Performance by Failure Type -->
+            <div class="card">
+              <div class="card-header">
+                <h4 style="margin:0 0 0.25rem 0;">8. Strategy Performance by Failure Type</h4>
+                <p class="text-muted" style="font-size:0.8rem; margin:0;">Optimal strategy mapping across failure categories</p>
+              </div>
+              <div class="card-body" style="padding:0.75rem 1rem;">
+                <div class="failure-strat-list" id="chartFailureStratContainer">
+                  <!-- Rendered dynamically -->
+                </div>
+              </div>
+            </div>
+
+            <!-- 9. Agent Decision Quality & Guardrails -->
+            <div class="card">
+              <div class="card-header">
+                <h4 style="margin:0 0 0.25rem 0;">9. Agent Decision Quality & Safety Guardrails</h4>
+                <p class="text-muted" style="font-size:0.8rem; margin:0;">Autonomous policy enforcement & safety metrics</p>
+              </div>
+              <div class="card-body">
+                <div class="decision-quality-grid" id="chartDecisionQualityContainer">
+                  <!-- Rendered dynamically -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 10. Baseline vs RecoverAI Strategy Engine -->
+          <div class="card" style="margin-bottom: 1.5rem;">
+            <div class="card-header" style="display:flex; justify-content:space-between; align-items:flex-start;">
+              <div>
+                <h4 style="margin:0 0 0.25rem 0;">10. Baseline vs RecoverAI Recovery Strategy</h4>
+                <p class="text-muted" style="font-size:0.8rem; margin:0;">Synthetic Demo Simulation comparing blind naive retries vs AI strategic recovery</p>
+              </div>
+              <span class="badge-tag" style="background:#fef3c7; color:#92400e;">Synthetic Demo Simulation</span>
+            </div>
+            <div class="card-body">
+              <div class="comparison-grid-horizontal" id="anComparisonBox">
+                <!-- Rendered dynamically -->
+              </div>
+            </div>
+          </div>
+
+          <!-- 11. Synthetic Dataset & Metric Definitions -->
+          <div class="card">
+            <div class="card-header">
+              <h4 style="margin:0 0 0.25rem 0;">11. Metric Definitions & Simulation Methodology</h4>
+              <p class="text-muted" style="font-size:0.8rem; margin:0;">Standardized financial metrics and evaluation standards for operators & judges</p>
+            </div>
+            <div class="card-body">
+              <div class="metric-definitions-grid">
+                <div class="def-item">
+                  <strong>Revenue at Risk</strong>
+                  <p>Sum of transaction amounts currently at risk from unresolved failed payments awaiting intelligent recovery.</p>
+                </div>
+                <div class="def-item">
+                  <strong>Potentially Recoverable</strong>
+                  <p>Volume of currently failed transactions whose AI recovery likelihood meets or exceeds the configured policy threshold (≥75%).</p>
+                </div>
+                <div class="def-item">
+                  <strong>Expected Recovery</strong>
+                  <p>Probability-weighted expected value calculated as <code>Amount × Recovery Probability</code> across eligible failed transactions.</p>
+                </div>
+                <div class="def-item">
+                  <strong>Recovered Revenue</strong>
+                  <p>Total volume of payments successfully captured and settled into the merchant ledger by the simulated recovery agent.</p>
+                </div>
+                <div class="def-item">
+                  <strong>Incremental Revenue</strong>
+                  <p>Net additional financial recovery gained by RecoverAI's strategy engine over the naive blind-retry baseline (<code>RecoverAI − Baseline</code>).</p>
+                </div>
+                <div class="def-item">
+                  <strong>Recovery Rate</strong>
+                  <p>Percentage of total checkout volume successfully salvaged (<code>Recovered Transactions ÷ Total Transactions × 100</code>).</p>
+                </div>
+              </div>
+              <div class="synthetic-disclaimer-box" style="margin-top:1rem; padding:0.75rem 1rem; background:var(--bg-card-subtle); border-radius:8px; border-left:4px solid var(--primary);">
+                <small class="text-muted" style="display:block; line-height:1.4;">
+                  <strong>Synthetic Dataset Disclosure:</strong> All customer names, transaction amounts, and banking decline codes represent simulated test data designed to demonstrate RecoverAI's autonomous recovery engine for the Razorpay AI Builder Track 3. No live banking switches or real customer payment accounts are debited.
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             5. STRATEGY LAB (/strategy -> #view-strategy)
+             =================================================================== -->
+        <div class="section-view" id="view-strategy" data-alias="strategy-lab">
+          <div class="lab-header-banner">
+            <div>
+              <h3>Recovery Strategy Intelligence Lab</h3>
+              <p class="text-muted">Explore how RecoverAI matches distinct failure characteristics with empirical recovery strategies, guardrail bounds, and historical benchmarks.</p>
+            </div>
+            <span class="badge-tag">Synthetic Historical Performance</span>
+          </div>
+
+          <!-- Strategy Selection Explanation Flow Banner -->
+          <div class="card strategy-flow-card" style="margin-bottom: 1.5rem;">
+            <div class="card-header">
+              <div class="card-header-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                </svg>
+                <h4>Autonomous Strategy Selection Architecture</h4>
+              </div>
+              <span class="badge-tag" style="background:#e0f2fe; color:#0369a1;">Deterministic + Gemini Dual Engine</span>
+            </div>
+            <div class="card-body">
+              <div class="strategy-flow-container">
+                <div class="flow-step">
+                  <div class="flow-step-number">1</div>
+                  <div class="flow-step-content">
+                    <strong>Failure Characteristics</strong>
+                    <span>Decline codes, switch timeout, card expiry, customer profile</span>
+                  </div>
+                </div>
+                <div class="flow-arrow">&rarr;</div>
+
+                <div class="flow-step">
+                  <div class="flow-step-number">2</div>
+                  <div class="flow-step-content">
+                    <strong>Recovery Probability</strong>
+                    <span>Bayesian probability model (0% – 100% confidence)</span>
+                  </div>
+                </div>
+                <div class="flow-arrow">&rarr;</div>
+
+                <div class="flow-step">
+                  <div class="flow-step-number">3</div>
+                  <div class="flow-step-content">
+                    <strong>Strategy Comparison</strong>
+                    <span>Simulate RETRY_NOW, WAIT, ALTERNATE, CONTACT</span>
+                  </div>
+                </div>
+                <div class="flow-arrow">&rarr;</div>
+
+                <div class="flow-step highlight-step">
+                  <div class="flow-step-number">4</div>
+                  <div class="flow-step-content">
+                    <strong>Best Strategy Selected</strong>
+                    <span>Maximize expected recovery while minimizing churn</span>
+                  </div>
+                </div>
+                <div class="flow-arrow">&rarr;</div>
+
+                <div class="flow-step">
+                  <div class="flow-step-number">5</div>
+                  <div class="flow-step-content">
+                    <strong>Guardrail Validation</strong>
+                    <span>Enforce retry limit, idempotency & financial safety</span>
+                  </div>
+                </div>
+                <div class="flow-arrow">&rarr;</div>
+
+                <div class="flow-step success-step">
+                  <div class="flow-step-number">6</div>
+                  <div class="flow-step-content">
+                    <strong>Recovery Execution</strong>
+                    <span>Trigger settlement, 1-click fallback, or SMS dispatch</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Strategy Matrix Cards -->
+          <div class="strategy-cards-grid" id="strategyLabGrid">
+            <!-- Populated dynamically with all 8 failure types -->
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             6. SIMULATION LAB (/simulation -> #view-simulation)
+             =================================================================== -->
+        <div class="section-view" id="view-simulation">
+          <div class="lab-header-banner">
+            <div>
+              <h3>Autonomous Recovery Simulation Lab</h3>
+              <p class="text-muted">Configure execution parameters, model synthetic checkout volume, and benchmark RecoverAI's capture lift against traditional retry engines.</p>
+            </div>
+            <span class="badge-tag" style="background:#fef3c7; color:#92400e;">Autonomous Agent Simulator</span>
+          </div>
+
+          <div class="simulation-lab-grid">
+            <!-- Left: Simulation Configuration Controls -->
+            <div class="card sim-controls-card">
+              <div class="card-header">
+                <div class="card-header-title">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                  </svg>
+                  <h4>Simulation Parameters</h4>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="simBatchSize">
+                    <span>Batch Size (Transactions)</span>
+                    <strong id="labelSimBatch">60 Transactions</strong>
+                  </label>
+                  <input type="range" id="simBatchSize" min="10" max="60" step="5" value="60" class="form-range">
+                  <small class="text-muted">Total number of failed transactions to feed into the simulation cycle.</small>
+                </div>
+
+                <div class="form-group">
+                  <label>
+                    <span>Failure Distribution Ingested</span>
+                  </label>
+                  <div class="distribution-pill-row">
+                    <span class="dist-pill">UPI Timeout: 35%</span>
+                    <span class="dist-pill">Bank Dropout: 25%</span>
+                    <span class="dist-pill">Auth Fail: 20%</span>
+                    <span class="dist-pill">Funds: 20%</span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="simStrategyMode">
+                    <span>Recovery Strategy Mode</span>
+                  </label>
+                  <select id="simStrategyMode" class="form-control">
+                    <option value="BALANCED" selected>BALANCED (Maximize Revenue + Retention)</option>
+                    <option value="FAST">FAST (Aggressive Immediate Capture on Transients)</option>
+                    <option value="CUSTOMER_FRIENDLY">CUSTOMER_FRIENDLY (Favor Cooldowns & Outreach)</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="simMaxRetries">
+                    <span>Maximum Retries Allowed</span>
+                    <strong id="labelSimMaxRetries">2</strong>
+                  </label>
+                  <input type="range" id="simMaxRetries" min="1" max="3" value="2" class="form-range">
+                </div>
+
+                <div class="form-group">
+                  <label for="simMinProb">
+                    <span>Minimum Recovery Probability</span>
+                    <strong id="labelSimMinProb">75%</strong>
+                  </label>
+                  <input type="range" id="simMinProb" min="50" max="90" step="5" value="75" class="form-range">
+                </div>
+
+                <div class="form-group">
+                  <label for="simHighValue">
+                    <span>High-Value Transaction Threshold (INR)</span>
+                  </label>
+                  <input type="number" id="simHighValue" value="10000" step="1000" class="form-control">
+                </div>
+
+                <div class="form-group">
+                  <label for="simSpeedSelect">
+                    <span>Simulation Speed</span>
+                  </label>
+                  <select id="simSpeedSelect" class="form-control">
+                    <option value="fast" selected>Fast (Animated 1.5s)</option>
+                    <option value="instant">Instant Execution</option>
+                  </select>
+                </div>
+
+                <div class="sim-run-box" style="margin-top: 1.5rem;">
+                  <button class="btn btn-primary btn-block btn-lg" id="btnRunLabSimulation">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polygon points="5 3 19 12 5 21 5 3"/>
+                    </svg>
+                    <span>RUN BATCH SIMULATION</span>
+                  </button>
+                </div>
+
+                <!-- Simulation Progress Bar -->
+                <div class="sim-progress-container" id="simProgressContainer" style="display:none; margin-top:1.25rem;">
+                  <div class="sim-progress-header">
+                    <span id="simProgressText">Running simulation engine...</span>
+                    <strong id="simProgressPct">0%</strong>
+                  </div>
+                  <div class="sim-progress-track">
+                    <div class="sim-progress-fill" id="simProgressFill" style="width: 0%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Simulation Results Cockpit -->
+            <div class="card sim-results-card">
+              <div class="card-header" style="display:flex; justify-content:space-between; align-items:center;">
+                <div class="card-header-title">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                  </svg>
+                  <h4>Simulation Results & Yield Analysis</h4>
+                </div>
+                <span class="status-badge status-recovered" id="simStatusBadge">AWAITING RUN</span>
+              </div>
+              <div class="card-body">
+                <div class="sim-kpi-grid">
+                  <div class="sim-kpi-box">
+                    <span class="sim-kpi-label">Transactions Analyzed</span>
+                    <strong class="sim-kpi-val" id="resAnalyzed">60</strong>
+                  </div>
+
+                  <div class="sim-kpi-box">
+                    <span class="sim-kpi-label">Revenue at Risk</span>
+                    <strong class="sim-kpi-val text-danger" id="resRisk">₹7,77,244</strong>
+                  </div>
+
+                  <div class="sim-kpi-box">
+                    <span class="sim-kpi-label">Successful Recoveries</span>
+                    <strong class="sim-kpi-val text-emerald" id="resSuccessCount">43</strong>
+                  </div>
+
+                  <div class="sim-kpi-box">
+                    <span class="sim-kpi-label">Failed Recoveries</span>
+                    <strong class="sim-kpi-val text-danger" id="resFailedCount">3</strong>
+                  </div>
+
+                  <div class="sim-kpi-box highlight-box">
+                    <span class="sim-kpi-label">Revenue Recovered</span>
+                    <strong class="sim-kpi-val text-emerald" id="resRecoveredRev">₹5,63,541</strong>
+                  </div>
+
+                  <div class="sim-kpi-box">
+                    <span class="sim-kpi-label">Recovery Rate</span>
+                    <strong class="sim-kpi-val text-primary" id="resRate">71.7%</strong>
+                  </div>
+
+                  <div class="sim-kpi-box">
+                    <span class="sim-kpi-label">Incremental Revenue</span>
+                    <strong class="sim-kpi-val text-emerald" id="resIncremental">₹1,53,643</strong>
+                  </div>
+
+                  <div class="sim-kpi-box">
+                    <span class="sim-kpi-label">Baseline Revenue</span>
+                    <strong class="sim-kpi-val text-muted" id="resBaseline">₹3,65,320</strong>
+                  </div>
+
+                  <div class="sim-kpi-box">
+                    <span class="sim-kpi-label">RecoverAI Agent Revenue</span>
+                    <strong class="sim-kpi-val text-primary" id="resAgent">₹5,18,963</strong>
+                  </div>
+
+                  <div class="sim-kpi-box">
+                    <span class="sim-kpi-label">Blocked Actions (Guards)</span>
+                    <strong class="sim-kpi-val text-danger" id="resBlocked">14</strong>
+                  </div>
+
+                  <div class="sim-kpi-box">
+                    <span class="sim-kpi-label">Manual Interventions</span>
+                    <strong class="sim-kpi-val text-amber" id="resInterventions">14</strong>
+                  </div>
+
+                  <div class="sim-kpi-box">
+                    <span class="sim-kpi-label">Execution Guard Status</span>
+                    <strong class="sim-kpi-val text-emerald">100% Compliant</strong>
+                  </div>
+                </div>
+
+                <!-- Action CTAs -->
+                <div class="sim-results-actions" style="margin-top: 1.5rem; display:flex; gap:0.75rem; flex-wrap:wrap;">
+                  <button class="btn btn-secondary btn-sm" onclick="switchSection('recovery')">
+                    <span>Inspect In Recovery Center &rarr;</span>
+                  </button>
+                  <button class="btn btn-secondary btn-sm" onclick="switchSection('audit')">
+                    <span>View Audit Decision Ledger &rarr;</span>
+                  </button>
+                  <button class="btn btn-secondary btn-sm" onclick="switchSection('analytics')">
+                    <span>Analyze BI Visualizations &rarr;</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             7. AI DECISIONS & AUDIT (/audit -> #view-audit)
+             =================================================================== -->
+        <div class="section-view" id="view-audit">
+          <div class="compliance-header-banner">
+            <div>
+              <h3>AI Decision History & Compliance Audit Ledger</h3>
+              <p class="text-muted">Cryptographically indexed immutable record of all payment evaluations, strategy assignments, guardrail checks, and simulated settlements.</p>
+            </div>
+            <div class="compliance-badges">
+              <span class="badge-tag" style="background:#ecfdf5; color:#065f46;">● SHA-256 Verified</span>
+              <span class="badge-tag" style="background:#eff6ff; color:#1e40af;">Immutable Append-Only</span>
+              <span class="badge-tag" style="background:#fef3c7; color:#92400e;">NPCI & RBI Compliant</span>
+            </div>
+          </div>
+
+          <!-- Audit Metrics Row -->
+          <div class="metrics-grid" style="margin-bottom: 1.5rem;">
+            <div class="metric-card">
+              <span class="metric-title">Total Audit Events</span>
+              <div class="metric-value text-primary" id="auditPageTotalCount">0</div>
+              <div class="metric-footer text-muted">Complete lifecycle events recorded</div>
+            </div>
+            <div class="metric-card">
+              <span class="metric-title">Guardrail Interventions</span>
+              <div class="metric-value text-danger" id="auditPageBlockedCount">0</div>
+              <div class="metric-footer text-muted">Unsafe retries prevented by policy</div>
+            </div>
+            <div class="metric-card">
+              <span class="metric-title">Recoveries Executed</span>
+              <div class="metric-value text-emerald" id="auditPageRecoveredCount">0</div>
+              <div class="metric-footer text-muted">Successful simulated settlements</div>
+            </div>
+            <div class="metric-card">
+              <span class="metric-title">Policy Enforcement Rate</span>
+              <div class="metric-value text-emerald">100.0%</div>
+              <div class="metric-footer text-muted">Zero unauthorized retries permitted</div>
+            </div>
+          </div>
+
+          <!-- Audit Table with Filters -->
+          <div class="card">
+            <div class="card-header" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem;">
+              <div class="card-header-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                </svg>
+                <h4>Decision History Ledger</h4>
+              </div>
+
+              <!-- Filter Toolbar for Audit -->
+              <div class="audit-filter-row">
+                <div class="search-wrap">
+                  <input type="text" id="auditSearchInput" placeholder="Filter by TX ID (e.g. TX1005)...">
+                </div>
+
+                <select id="auditFilterType" class="form-select-sm">
+                  <option value="ALL">All Event Types</option>
+                  <option value="PAYMENT_CAPTURED">Payment Captured</option>
+                  <option value="GUARD_BLOCKED">Guardrail Blocked</option>
+                  <option value="AI_ANALYSIS">AI Analysis</option>
+                  <option value="SIMULATION_EXEC">Simulation Executed</option>
+                  <option value="BATCH_RECOVERY">Batch Recovery</option>
+                  <option value="INTERVENTION_REQUIRED">Intervention Required</option>
+                  <option value="POLICY_UPDATE">Policy Update</option>
+                </select>
+
+                <select id="auditFilterPolicy" class="form-select-sm">
+                  <option value="ALL">All Policy Results</option>
+                  <option value="Approved">Approved</option>
+                  <option value="Blocked">Blocked</option>
+                  <option value="Intervention Required">Intervention</option>
+                </select>
+
+                <select id="auditFilterResult" class="form-select-sm">
+                  <option value="ALL">All Results</option>
+                  <option value="SUCCESS">SUCCESS</option>
+                  <option value="BLOCKED">BLOCKED</option>
+                  <option value="INTERVENTION">INTERVENTION</option>
+                  <option value="LOGGED">LOGGED</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="table-container">
+              <table class="payment-table audit-ledger-table">
+                <thead>
+                  <tr>
+                    <th>Timestamp</th>
+                    <th>Transaction ID</th>
+                    <th>Event Type</th>
+                    <th>Recovery Probability</th>
+                    <th>Policy Result</th>
+                    <th>Action Taken</th>
+                    <th>Result</th>
+                    <th>Recovered Amount</th>
+                    <th>Inspect</th>
+                  </tr>
+                </thead>
+                <tbody id="auditPageTableBody">
+                  <!-- Rendered dynamically -->
+                </tbody>
+              </table>
+            </div>
+            <div class="table-footer">
+              <span id="auditShowingCount">Showing 0 events</span>
+              <span class="text-muted">Click Inspect to view full AI reasoning & guardrail validation details</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             8. ADMIN & POLICIES (/admin -> #view-admin)
+             =================================================================== -->
+        <div class="section-view" id="view-admin" data-alias="admin-policies">
+          <div class="admin-grid">
+            <!-- Left: Policy Configuration Card -->
+            <div class="card">
+              <div class="card-header">
+                <div class="card-header-title">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                  </svg>
+                  <h3>Merchant Recovery Policy Brain</h3>
+                </div>
+              </div>
+              <div class="card-body">
+                <form id="policyForm" class="policy-form">
+                  <div class="form-group">
+                    <label for="policyMaxRetries">
+                      <span>Maximum Automatic Retries</span>
+                      <strong id="labelMaxRetries">2</strong>
+                    </label>
+                    <input type="range" id="policyMaxRetries" min="1" max="3" value="2" class="form-range">
+                    <small class="text-muted">Hard limit on automatic retries before permanently blocking machine execution.</small>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="policyMinProb">
+                      <span>Minimum Recovery Probability for Auto-Recovery</span>
+                      <strong id="labelMinProb">75%</strong>
+                    </label>
+                    <input type="range" id="policyMinProb" min="50" max="90" step="5" value="75" class="form-range">
+                    <small class="text-muted">Transactions with lower likelihood require manual or customer intervention.</small>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="policyHighValue">
+                      <span>High-Value Transaction Threshold (INR)</span>
+                    </label>
+                    <input type="number" id="policyHighValue" value="10000" step="1000" class="form-control">
+                    <small class="text-muted">High-value payments trigger stricter recovery surveillance.</small>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="policyStrategyMode">
+                      <span>Recovery Strategy Mode</span>
+                    </label>
+                    <select id="policyStrategyMode" class="form-control">
+                      <option value="BALANCED" selected>BALANCED (Optimize Revenue & Customer Retention)</option>
+                      <option value="FAST">FAST (Aggressive Immediate Retries on Transients)</option>
+                      <option value="CUSTOMER_FRIENDLY">CUSTOMER_FRIENDLY (Prioritize Cooldowns & Notifications)</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group form-check">
+                    <input type="checkbox" id="policyAutoEnabled" checked class="form-checkbox">
+                    <label for="policyAutoEnabled">Enable Automated Recovery Execution</label>
+                  </div>
+
+                  <div class="form-actions">
+                    <button type="submit" class="btn btn-primary" id="btnSavePolicy">
+                      <span>Save & Apply Policy</span>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Right: System Guardrails & System Status -->
+            <div class="admin-side-cards">
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-header-title">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                    <h3>System Guardrails</h3>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="guardrails-list">
+                    <div class="guardrail-row">
+                      <span>Retry Limit Protection (Max 2)</span>
+                      <span class="status-badge status-recovered">ACTIVE</span>
+                    </div>
+                    <div class="guardrail-row">
+                      <span>Financial Safety Checks (Overdraft Guard)</span>
+                      <span class="status-badge status-recovered">ACTIVE</span>
+                    </div>
+                    <div class="guardrail-row">
+                      <span>Duplicate Recovery Guard (Idempotency)</span>
+                      <span class="status-badge status-recovered">ACTIVE</span>
+                    </div>
+                    <div class="guardrail-row">
+                      <span>Post-Recovery State Lock (No Conflict)</span>
+                      <span class="status-badge status-recovered">ACTIVE</span>
+                    </div>
+                    <div class="guardrail-row">
+                      <span>Audit Trail Logging (Immutable)</span>
+                      <span class="status-badge status-recovered">ACTIVE</span>
+                    </div>
+                    <div class="guardrail-row">
+                      <span>Deterministic Fallback Engine</span>
+                      <span class="status-badge status-recovered">ACTIVE</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-header-title">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="10"/>
+                      <line x1="2" y1="12" x2="22" y2="12"/>
+                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                    </svg>
+                    <h3>System Status Monitor</h3>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="status-grid-mini">
+                    <div class="status-mini-item">
+                      <span class="text-muted">AI Intelligence Engine:</span>
+                      <strong id="sysAiEngine">Deterministic Fallback Engine</strong>
+                    </div>
+                    <div class="status-mini-item">
+                      <span class="text-muted">Recovery Decision Engine:</span>
+                      <strong class="text-emerald">Operational (State-Synchronized)</strong>
+                    </div>
+                    <div class="status-mini-item">
+                      <span class="text-muted">Audit System:</span>
+                      <strong class="text-emerald">Operational (Real-time)</strong>
+                    </div>
+                    <div class="status-mini-item">
+                      <span class="text-muted">Simulation Engine:</span>
+                      <strong class="text-emerald">Operational (Guarded)</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Slide-Over Detailed Analysis Panel / Drawer (Global across pages) -->
+  <aside class="analysis-drawer" id="analysisDrawer" aria-hidden="true">
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+    <div class="drawer-content">
+      <div class="drawer-header">
+        <div class="drawer-header-info">
+          <div class="drawer-title-tag">
+            <span class="tx-id-badge" id="dTxId">TX----</span>
+            <span class="status-pill" id="dStatusPill">Failed</span>
+            <span class="scenario-badge" id="dScenarioBadge" style="display:none;"></span>
+          </div>
+          <h3 id="dCustomerName">Customer Name</h3>
+        </div>
+        <button class="btn-close" id="closeDrawerBtn" aria-label="Close panel">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="drawer-body">
+        <!-- 1. PAYMENT OVERVIEW -->
+        <div class="drawer-section">
+          <h5 class="drawer-section-title">PAYMENT OVERVIEW</h5>
+          <div class="facts-grid">
+            <div class="fact-box">
+              <span class="fact-label">Amount</span>
+              <span class="fact-value text-primary" id="dAmount">₹0.00</span>
+            </div>
+            <div class="fact-box">
+              <span class="fact-label">Payment Method</span>
+              <span class="fact-value" id="dMethod">--</span>
+            </div>
+            <div class="fact-box">
+              <span class="fact-label">Failure Reason</span>
+              <span class="fact-value text-danger" id="dFailure">--</span>
+            </div>
+            <div class="fact-box">
+              <span class="fact-label">Expected Recovery Value</span>
+              <span class="fact-value text-emerald" id="dExpectedValue">₹0.00</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. RECOVERY GUARD -->
+        <div class="guard-card" id="guardCard">
+          <div class="guard-header">
+            <div class="guard-icon" id="guardIcon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div class="guard-title-wrap">
+              <h4>RECOVERY GUARD STATUS</h4>
+              <span class="guard-status-badge" id="dGuardBadge">AUTOMATIC RECOVERY ACTIVE</span>
+            </div>
+          </div>
+          <div class="guard-body">
+            <div class="guard-meter">
+              <div class="meter-label">
+                <span>Automatic Retries Used: <strong id="dGuardAttemptsCount">1</strong> / <span id="dGuardMax">2</span> Allowed</span>
+                <span class="meter-pct" id="dGuardMeterPct">50%</span>
+              </div>
+              <div class="meter-track">
+                <div class="meter-fill" id="dGuardMeterFill" style="width: 50%;"></div>
+              </div>
+            </div>
+            <p class="guard-explanation" id="dGuardReason">
+              Recovery Guard permits controlled retry within attempt threshold.
+            </p>
+          </div>
+        </div>
+
+        <!-- 3. RECOVERY INTELLIGENCE CARD -->
+        <div class="ai-analysis-card" id="dAiAnalysisCard">
+          <div class="ai-card-header">
+            <div class="ai-header-left">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                <line x1="12" y1="22.08" x2="12" y2="12"/>
+              </svg>
+              <h4>AI Recovery Intelligence</h4>
+            </div>
+            <span class="engine-tag" id="dEngineTag">Deterministic Strategy Engine</span>
+          </div>
+
+          <div class="ai-stats-row">
+            <div class="ai-stat-box">
+              <span class="ai-stat-label">Recovery Likelihood</span>
+              <div class="ai-prob-row">
+                <span class="ai-prob-number" id="dProbNumber">0%</span>
+                <div class="prob-bar-wrap">
+                  <div class="prob-bar-fill" id="dProbFill" style="width: 0%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ai-stat-box">
+              <span class="ai-stat-label">Risk Level</span>
+              <span class="risk-badge" id="dRiskBadge">Medium</span>
+            </div>
+
+            <div class="ai-stat-box">
+              <span class="ai-stat-label">Recommended Strategy</span>
+              <span class="action-badge" id="dActionBadge">WAIT_AND_RETRY</span>
+            </div>
+          </div>
+
+          <div class="ai-reason-box">
+            <span class="reason-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="16" x2="12" y2="12"/>
+                <line x1="12" y1="8" x2="12.01" y2="8"/>
+              </svg>
+              Decision Reasoning
+            </span>
+            <p id="dReasonText">Reason text loading...</p>
+          </div>
+        </div>
+
+        <!-- 4. SIMULATION OUTCOME BANNER -->
+        <div class="simulation-banner" id="simulationBanner" style="display:none;">
+          <div class="sim-header">
+            <div class="sim-icon" id="simIcon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
+            <div class="sim-title-group">
+              <strong id="simTitle">Recovery Action Simulated</strong>
+              <span class="text-muted" id="simTime">Just now</span>
+            </div>
+          </div>
+          <div class="sim-body">
+            <div class="sim-detail-row">
+              <span>Final State:</span>
+              <strong id="simOutcome">Recovered</strong>
+            </div>
+            <div class="sim-detail-row" id="simAmountRow">
+              <span>Amount Captured:</span>
+              <strong class="text-emerald" id="simAmount">₹0.00</strong>
+            </div>
+            <p class="sim-message" id="simMessage">Recovery attempt completed.</p>
+          </div>
+        </div>
+
+        <!-- 5. ACTION CONTROLS -->
+        <div class="action-buttons-group">
+          <button class="btn btn-primary" id="btnExecuteRecovery">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="5 3 19 12 5 21 5 3"/>
+            </svg>
+            <span>Execute Recovery</span>
+          </button>
+
+          <button class="btn btn-secondary" id="btnAnalyzeAI">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+            </svg>
+            <span>Analyze with AI</span>
+          </button>
+        </div>
+
+        <!-- 6. CUSTOMER RECOVERY MESSAGE -->
+        <div class="customer-message-section">
+          <div class="message-section-header">
+            <div class="msg-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+              <h4>Customer Recovery Message</h4>
+            </div>
+            <button class="btn btn-xs btn-outline" id="btnCopyMessage">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+              </svg>
+              <span id="copyBtnText">Copy Message</span>
+            </button>
+          </div>
+          <div class="message-bubble" id="dCustomerMessage">
+            Customer message will appear here...
+          </div>
+        </div>
+
+        <!-- 7. ANALYSIS HISTORY -->
+        <div class="history-section">
+          <div class="history-header">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            <h4>Analysis History & Outcomes</h4>
+          </div>
+          <div class="history-timeline" id="dHistoryTimeline">
+            <p class="text-muted">No prior analysis runs recorded.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Live Audit Trail Modal Dialog -->
+  <dialog class="audit-modal" id="auditModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <div class="modal-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Audit Trail & Explainability Log</h3>
+            <p class="text-muted">Every recovery decision, guardrail check, and simulation is recorded with exact timestamps.</p>
+          </div>
+        </div>
+        <button class="btn-close" id="closeAuditModalBtn" aria-label="Close audit log">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="audit-timeline" id="auditTimelineList">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <span class="text-muted"><strong id="auditTotalCount">0</strong> Total Events Logged</span>
+        <button class="btn btn-secondary btn-sm" id="closeAuditFooterBtn">Close</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Batch Simulation Summary Modal Dialog -->
+  <dialog class="audit-modal" id="batchModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <div class="modal-icon bg-blue-subtle">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="5 3 19 12 5 21 5 3"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Batch Recovery Simulation Summary</h3>
+            <p class="text-muted">Simulated automated capture across all eligible failed transactions.</p>
+          </div>
+        </div>
+        <button class="btn-close" id="closeBatchModalBtn" aria-label="Close dialog">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body" id="batchModalBody">
+        <!-- Rendered dynamically -->
+      </div>
+      <div class="modal-footer">
+        <span class="badge-tag">Synthetic Batch Simulation</span>
+        <button class="btn btn-primary btn-sm" id="closeBatchFooterBtn">View Updated Queue</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

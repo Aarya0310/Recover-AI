@@ -1,0 +1,61 @@
+transaction_id,customer_name,amount,payment_method,failure_reason,attempts,transaction_date,status
+TX1001,Rahul Sharma,4999.0,UPI,Bank Timeout,1,2026-09-05 09:15:22,Failed
+TX1002,Priya Patel,12500.0,Credit Card,Insufficient Funds,1,2026-09-05 09:28:45,Failed
+TX1003,Amit Verma,2499.0,Debit Card,Expired Card,1,2026-09-05 09:41:10,Failed
+TX1004,Neha Gupta,18900.0,Net Banking,Bank Timeout,2,2026-09-05 09:55:04,Failed
+TX1005,Vikram Singh,7850.0,UPI,UPI Timeout,1,2026-09-05 10:02:18,Failed
+TX1006,Ananya Iyer,3499.0,Credit Card,Authentication Failed,1,2026-09-05 10:14:33,Failed
+TX1007,Rohan Mehta,89999.0,Net Banking,Technical Error,1,2026-09-05 10:25:50,Failed
+TX1008,Sneha Kulkarni,1599.0,UPI,Network Error,1,2026-09-05 10:38:12,Failed
+TX1009,Arjun Reddy,45000.0,Credit Card,Card Declined,1,2026-09-05 10:49:01,Failed
+TX1010,Kavita Nair,6200.0,UPI,Bank Timeout,2,2026-09-05 11:01:45,Failed
+TX1011,Manish Joshi,999.0,Debit Card,Insufficient Funds,1,2026-09-04 11:15:20,Failed
+TX1012,Deepika Sen,27500.0,Credit Card,Expired Card,1,2026-09-04 11:27:14,Failed
+TX1013,Suresh Menon,13400.0,Net Banking,Bank Timeout,1,2026-09-04 11:39:55,Failed
+TX1014,Pooja Bansal,4200.0,UPI,UPI Timeout,1,2026-09-04 11:51:30,Failed
+TX1015,Gaurav Chopra,64999.0,Credit Card,Technical Error,1,2026-09-04 12:04:19,Failed
+TX1016,Ritu Saxena,3200.0,Debit Card,Authentication Failed,2,2026-09-03 12:16:42,Failed
+TX1017,Karthik Raman,8500.0,UPI,Network Error,1,2026-09-03 12:28:09,Failed
+TX1018,Meera Das,19500.0,Credit Card,Card Declined,1,2026-09-03 12:40:51,Failed
+TX1019,Vivek Bhatt,5600.0,Net Banking,Bank Timeout,1,2026-09-03 12:52:18,Failed
+TX1020,Shweta Pandey,1199.0,UPI,Insufficient Funds,1,2026-09-03 13:05:40,Failed
+TX1021,Harish Nair,38000.0,Credit Card,Expired Card,2,2026-09-02 13:17:22,Failed
+TX1022,Nandini Rao,2899.0,Debit Card,Bank Timeout,1,2026-09-02 13:29:50,Failed
+TX1023,Aditya Malhotra,51200.0,Net Banking,Technical Error,1,2026-09-02 13:42:15,Failed
+TX1024,Pallavi Deshmukh,6700.0,UPI,UPI Timeout,2,2026-09-02 13:54:33,Failed
+TX1025,Sanjay Singhania,145000.0,Credit Card,Authentication Failed,1,2026-09-01 14:06:48,Failed
+TX1026,Divya Pillai,4800.0,UPI,Network Error,1,2026-09-01 14:18:25,Failed
+TX1027,Abhishek Roy,22000.0,Debit Card,Insufficient Funds,2,2026-09-01 14:30:11,Failed
+TX1028,Aarti Aggarwal,9400.0,Credit Card,Card Declined,1,2026-09-01 14:42:39,Failed
+TX1029,Rameshwar Prasad,3600.0,Net Banking,Bank Timeout,1,2026-08-31 14:55:02,Failed
+TX1030,Kiran Tiwari,12999.0,UPI,UPI Timeout,1,2026-08-31 15:07:19,Failed
+TX1031,Sunil Mukherjee,7499.0,Credit Card,Expired Card,1,2026-08-31 15:19:44,Failed
+TX1032,Tara Nambiar,16800.0,Net Banking,Technical Error,2,2026-08-31 15:31:08,Failed
+TX1033,Yash Vardhan,5999.0,Debit Card,Network Error,1,2026-08-30 15:43:27,Failed
+TX1034,Alok Mathur,83000.0,Credit Card,Authentication Failed,1,2026-08-30 15:55:53,Failed
+TX1035,Geeta Swaminathan,2100.0,UPI,Insufficient Funds,1,2026-08-30 16:08:14,Failed
+TX1036,Pradeep Hegde,31500.0,Net Banking,Bank Timeout,1,2026-08-30 16:20:30,Failed
+TX1037,Smriti Kashyap,4500.0,Credit Card,Card Declined,2,2026-08-29 16:32:45,Failed
+TX1038,Tarun Bajaj,8700.0,UPI,UPI Timeout,1,2026-08-29 16:45:01,Failed
+TX1039,Bhavna Mittal,14200.0,Debit Card,Expired Card,1,2026-08-29 16:57:26,Failed
+TX1040,Hemant Solanki,92000.0,Net Banking,Technical Error,1,2026-08-29 17:09:50,Failed
+TX1041,Rupal Chawla,3999.0,Credit Card,Authentication Failed,2,2026-08-28 17:21:12,Failed
+TX1042,Naveen Gowda,6300.0,UPI,Network Error,1,2026-08-28 17:33:38,Failed
+TX1043,Usha Sundaram,18400.0,Net Banking,Bank Timeout,2,2026-08-28 17:45:55,Failed
+TX1044,Devendra Rathore,54000.0,Credit Card,Insufficient Funds,1,2026-08-28 17:58:10,Failed
+TX1045,Shalini Bose,2799.0,UPI,UPI Timeout,1,2026-08-27 18:10:35,Failed
+TX1046,Ashwin Prabhu,11500.0,Debit Card,Card Declined,1,2026-08-27 18:22:50,Failed
+TX1047,Nisha Kapoor,49500.0,Credit Card,Expired Card,2,2026-08-27 18:35:14,Failed
+TX1048,Mohit Gambhir,7200.0,Net Banking,Technical Error,1,2026-08-27 18:47:40,Failed
+TX1049,Swati Tripathy,1899.0,UPI,Bank Timeout,1,2026-08-26 19:00:05,Failed
+TX1050,Chetan Bhagat,36500.0,Credit Card,Authentication Failed,1,2026-08-26 19:12:30,Failed
+TX1051,Ankita Roy,4100.0,Debit Card,Network Error,2,2026-08-26 19:24:45,Failed
+TX1052,Vikas Soni,23000.0,Net Banking,Insufficient Funds,1,2026-08-26 19:37:11,Failed
+TX1053,Preeti Jain,5800.0,UPI,UPI Timeout,1,2026-08-25 19:49:36,Failed
+TX1054,Girish Saxena,105000.0,Credit Card,Bank Timeout,1,2026-08-25 20:02:01,Failed
+TX1055,Tanvi Narang,8200.0,Debit Card,Card Declined,1,2026-08-25 20:14:26,Failed
+TX1056,Rajesh Khanna,1950.0,UPI,Expired Card,1,2026-08-25 20:26:50,Failed
+TX1057,Monica Geller,16400.0,Credit Card,Technical Error,1,2026-08-24 20:39:15,Failed
+TX1058,Kunal Kamra,48900.0,Net Banking,Bank Timeout,2,2026-08-24 20:51:40,Failed
+TX1059,Ira Singhal,3300.0,UPI,Network Error,1,2026-08-23 21:04:05,Failed
+TX1060,Siddharth Shukla,27000.0,Credit Card,Insufficient Funds,1,2026-08-23 21:16:30,Failed
