@@ -3,6 +3,11 @@
 RecoverAI is an enterprise-grade AI-powered payment revenue recovery platform designed for fintechs, payment gateways, and high-volume merchants. Built with the design and operational rigor suitable for a **Razorpay AI Builder** submission, RecoverAI autonomously evaluates failed digital transactions, determines decline root causes, computes recovery probabilities, chooses optimal recovery strategies, and executes controlled recoveries within strict merchant guardrails.
 
 ---
+## 🚀 Live Demo
+
+**Try RecoverAI:**  
+https://recover-ai-ywop.onrender.com
+---
 
 ## The Problem
 
@@ -25,45 +30,80 @@ RecoverAI transforms brute-force payment retries into an intelligent, closed-loo
 
 ---
 
-## 5-Section Command Center Architecture
+## 8-Section Command Center Architecture
 
-RecoverAI features a clean, responsive fintech Command Center organized into 5 operational sections:
+RecoverAI provides an interactive fintech Command Center organized into eight operational sections:
 
-### 1. Command Center (Executive Overview)
-- **Top-Level KPI Cards**: Tracks Total Transactions, Revenue at Risk, Potentially Recoverable, Recovered Revenue, and Net Recovery Rate.
-- **Revenue Recovery Breakdown Bar**: Visual proportion comparing total revenue at risk, expected recovery volume, and captured revenue.
-- **Baseline vs RecoverAI Performance Comparison**: Demonstrates incremental revenue gain and percentage lift over standard naive retry models.
-- **Priority Recovery Queue**: Instant view of the highest expected-value transactions awaiting intelligent recovery action.
+### 1. Dashboard
+- Executive overview of payment failures and revenue at risk
+- Total transactions and failed payments
+- Potentially recoverable revenue
+- Recovered revenue
+- Baseline vs RecoverAI recovery performance
+- Priority recovery queue
 
-### 2. Recovery Queue (Operational Workbench)
-- **Granular Filter Chips**: Filter instantly by `All`, `High Probability (>=75%)`, `Medium Probability (40-74%)`, `Low Probability (<40%)`, `Needs Intervention`, `Blocked by Guardrail`, and `Recovered`.
-- **Search & Multi-Column Sorting**: Search across Customer, Transaction ID, Failure Reason, or Rail, and sort by Amount, Recovery Probability, Expected Value, or Attempts.
-- **Slide-Over Transaction Drawer**: Deep-dive inspection showing:
-  - Payment Overview & Expected Value
-  - Live Recovery Guard Meter & Status
-  - AI Recovery Intelligence & Reasoning
-  - One-Click Customer Notification Dispatcher with clipboard copy
-  - Historical Analysis Audit Timeline
+### 2. Recovery Center
+- Centralized failed-payment recovery queue
+- Recovery probability and expected recovery value
+- Failure reason and payment method analysis
+- Retry attempt tracking
+- Recovery status and guardrail state
+- Detailed transaction inspection
 
-### 3. Recovery Analytics (BI & Observability)
-- **Revenue at Risk vs Recovered**: Compares at-risk capital against successful captures and incremental lift.
-- **Decline Reason Breakdown**: Recovery rates and volume captured across each distinct failure mode.
-- **Payment Method Recovery Rates**: Benchmark performance across UPI, Credit Cards, Debit Cards, Net Banking, and Wallets.
-- **Outcomes Distribution Grid**: Real-time counter of Recovered, Guard-Blocked, Intervention Required, and Pending Retry.
-- **Recovery Success by Attempt Number**: Analysis demonstrating capture diminishing returns across retry attempts.
+### 3. AI Analyzer
+- Analyze individual payment failures
+- Estimate recovery probability
+- Identify the likely failure context
+- Recommend the most suitable recovery strategy
+- Generate decision reasoning
+- Apply recovery guardrails
 
-### 4. Strategy Intelligence Lab
-- **Synthetic Historical Benchmark Matrix**: Comprehensive empirical dataset comparing recovery strategies across 8 failure categories (UPI Timeout, Bank Timeout, Network Error, 3DS Failure, Insufficient Funds, Expired Card, Invalid CVV, Payment Limit Exceeded).
-- **Empirical Win-Rates**: Shows why specific strategies (e.g. `WAIT_AND_RETRY` vs `RETRY_NOW`) are chosen for specific failure codes.
+### 4. Analytics
+- Revenue at risk vs recovered revenue
+- Recovery success rate
+- Recovery performance by failure reason
+- Recovery performance by payment channel
+- Strategy performance
+- Recovery economics and incremental revenue
+- Recovery trends and distributions
 
-### 5. Admin & Policy Brain
-- **Configurable Merchant Policies**:
-  - `Max Retries Allowed` (Default: 2)
-  - `Minimum Recovery Probability Threshold` (Default: 75%)
-  - `High-Value Intervention Threshold` (e.g. 10,000)
-  - `Recovery Strategy Mode` (`BALANCED`, `AGGRESSIVE`, `CONSERVATIVE`, `FAST`)
-  - `Automated Recovery Engine Toggle`
-- **Instant System Status**: Live monitoring of active AI engine (`Gemini 2.5 Flash` or `Deterministic Fallback Engine`).
+### 5. Strategy Lab
+- Compare recovery strategies
+- Evaluate strategy performance across failure types
+- Compare `RETRY_NOW`, `WAIT_AND_RETRY`,
+  `ALTERNATE_PAYMENT_METHOD`, `CONTACT_CUSTOMER`,
+  `UPDATE_PAYMENT_METHOD`, and `STOP_RECOVERY`
+- Identify the most appropriate strategy for each failure scenario
+
+### 6. Simulation Lab
+- Run batch recovery simulations
+- Configure retry limits
+- Configure minimum recovery probability
+- Configure high-value transaction thresholds
+- Measure revenue recovered
+- Compare baseline and RecoverAI performance
+- Track blocked actions and manual interventions
+
+### 7. AI Decisions & Audit
+- Complete recovery decision history
+- Recovery probability
+- Policy result
+- Action taken
+- Recovery outcome
+- Recovered amount
+- Transaction-level audit trail
+
+### 8. Admin & Policies
+- Maximum automatic retries
+- Minimum recovery probability threshold
+- High-value transaction threshold
+- Recovery strategy mode
+- Automated recovery execution control
+- Retry protection
+- Financial safety checks
+- Duplicate recovery protection
+- Post-recovery state lock
+- Deterministic fallback engine
 
 ---
 
@@ -121,6 +161,28 @@ The dataset comes pre-seeded with 5 targeted hackathon scenarios accessible dire
 4. **Launch Server**: `python app.py`
 5. **Open Dashboard**: `http://127.0.0.1:5000`
 
+---
+## 🌐 Deployment
+
+RecoverAI is deployed as a Flask web application using Render.
+
+### Live Application
+
+**[https://recover-ai-ywop.onrender.com](https://recover-ai-ywop.onrender.com)**
+
+### Deployment Stack
+
+- GitHub – Source Code & Version Control
+- Render – Cloud Deployment
+- Flask – Backend Web Framework
+- Gunicorn – Production WSGI Server
+- Google Gemini API – AI Reasoning Layer
+
+The application can be deployed from the GitHub repository using:
+
+```bash
+pip install -r requirements.txt
+gunicorn app:app
 ---
 
 ## Disclaimers & Limitations
